@@ -211,22 +211,63 @@
             "time": "2014-04-16 10:36:21"
         },
         {
+            "name": "ulrichsg/getopt-php",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ulrichsg/getopt-php.git",
+                "reference": "97d15b99a0d5eab989140eef250eace9affa8525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ulrichsg/getopt-php/zipball/97d15b99a0d5eab989140eef250eace9affa8525",
+                "reference": "97d15b99a0d5eab989140eef250eace9affa8525",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ulrichsg\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ulrich Schmidt-Goertz",
+                    "email": "ulrich@schmidt-goertz.de"
+                }
+            ],
+            "description": "Command line arguments parser for PHP 5.3",
+            "homepage": "http://ulrichsg.github.io/getopt-php",
+            "time": "2014-02-28 11:06:22"
+        },
+        {
             "name": "valera/engine",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/morozov/valera.git",
-                "reference": "3aaa8641968e96fcac1582bec579448ea842c9f7"
+                "reference": "1a50aa71c73fec730836843bcb62554d8648b8cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/morozov/valera/zipball/3aaa8641968e96fcac1582bec579448ea842c9f7",
-                "reference": "3aaa8641968e96fcac1582bec579448ea842c9f7",
+                "url": "https://api.github.com/repos/morozov/valera/zipball/1a50aa71c73fec730836843bcb62554d8648b8cc",
+                "reference": "1a50aa71c73fec730836843bcb62554d8648b8cc",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "@stable",
-                "monolog/monolog": "~1.9"
+                "monolog/monolog": "~1.9",
+                "ulrichsg/getopt-php": "~2.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -235,7 +276,10 @@
             "autoload": {
                 "psr-0": {
                     "Valera": "src/"
-                }
+                },
+                "classmap": [
+                    "lib/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -252,7 +296,7 @@
                 }
             ],
             "description": "Valera, the parser engine",
-            "time": "2014-06-07 12:39:42"
+            "time": "2014-06-23 09:59:11"
         }
     ],
     "packages-dev": [
@@ -506,16 +550,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.1.2",
+            "version": "4.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "be5f237df860da88a7cfe247594232cae61845df"
+                "reference": "939cb801b3b2aa253aedd0b279f40bb8f35cec91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be5f237df860da88a7cfe247594232cae61845df",
-                "reference": "be5f237df860da88a7cfe247594232cae61845df",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/939cb801b3b2aa253aedd0b279f40bb8f35cec91",
+                "reference": "939cb801b3b2aa253aedd0b279f40bb8f35cec91",
                 "shasum": ""
             },
             "require": {
@@ -576,20 +620,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-06-07 07:30:48"
+            "time": "2014-06-11 14:15:47"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.1.2",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "4a6423af97d4b4a0010a1ac5addfad4843c3e97b"
+                "reference": "1a894a16b6c15fcdc5ef2b110f0e6233952c9b0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/4a6423af97d4b4a0010a1ac5addfad4843c3e97b",
-                "reference": "4a6423af97d4b4a0010a1ac5addfad4843c3e97b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/1a894a16b6c15fcdc5ef2b110f0e6233952c9b0f",
+                "reference": "1a894a16b6c15fcdc5ef2b110f0e6233952c9b0f",
                 "shasum": ""
             },
             "require": {
@@ -633,7 +677,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-06-06 17:02:49"
+            "time": "2014-06-07 16:22:57"
         },
         {
             "name": "sebastian/comparator",

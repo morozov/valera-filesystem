@@ -31,10 +31,16 @@ class FileSystem implements BlobStorage
         return $path;
     }
 
-    public function retrieve(Resource $resource)
+    public function isStored(Resource $resource)
     {
         $path = $this->getPath($resource);
-        if (file_exists($path)) {
+        return file_exists($path);
+    }
+
+    public function retrieve(Resource $resource)
+    {
+        if ($this->isStored($resource)) {
+            $path = $this->getPath($resource);
             return file_get_contents($path);
         }
 
@@ -43,13 +49,13 @@ class FileSystem implements BlobStorage
 
     public function delete(Resource $resource)
     {
-        $path = $this->getPath($resource);
-        if (file_exists($path)) {
+        if ($this->isStored($resource)) {
+            $path = $this->getPath($resource);
             unlink($path);
         }
     }
 
-    protected function getPath(Resource $resource)
+    public function getPath(Resource $resource)
     {
         $url = $resource->getUrl();
         $url = preg_replace('/^[a-z0-9]+:\/\//', '', $url);
