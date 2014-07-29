@@ -83,16 +83,16 @@ class FileSystem implements BlobStorage
 
     protected function truncate($fileName, Resource $resource)
     {
-        if (strlen($fileName) > self::MAX_NAME) {
+        if ($this->strlen($fileName) > self::MAX_NAME) {
             $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-            $extensionLength = strlen($extension);
+            $extensionLength = $this->strlen($extension);
             if ($extensionLength > 0 && $extensionLength <= 4) {
                 $suffix = '.' . $extension;
             } else {
                 $suffix = '';
             }
-            $fileName = substr($fileName, 0, self::MAX_NAME - 8 - strlen($suffix))
-                . '-' . substr($resource->getHash(), 0, 7) . $suffix;
+            $fileName = $this->substr($fileName, 0, self::MAX_NAME - 8 - $this->strlen($suffix))
+                . '-' . $this->substr($resource->getHash(), 0, 7) . $suffix;
         }
 
         return $fileName;
@@ -113,5 +113,15 @@ class FileSystem implements BlobStorage
 
         $it = new \FilesystemIterator($this->root);
         return iterator_count($it);
+    }
+
+    private function strlen($str)
+    {
+        return mb_strlen($str, 'utf-8');
+    }
+
+    private function substr($str, $start, $length = null)
+    {
+        return mb_substr($str, $start, $length, 'utf-8');
     }
 }
